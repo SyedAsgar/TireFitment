@@ -1,0 +1,46 @@
+<div class="container">
+
+    <div class="d-flex mt-5">
+        <button type="button" class="btn btn-primary" (click)="getYears()">Get Years</button>
+        <h3 *ngIf="isLoading" class="loading my-0">Loading...</h3>
+    </div>
+
+    <div class="row mt-4 data">
+
+        <div class="col-3">
+            <div class="card">
+                <div class="card-header"><b>Years</b></div>
+                <div class="years card-body">
+                    <p *ngFor="let item of yearsObj?.year" (click)="getMakes(item)">{{item}}</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-3">
+            <div class="card">
+                <div class="card-header"><b>Makes</b></div>
+                <div class="makes card-body">
+                    <p *ngFor="let item of makesObj?.make" (click)="getModels(item)">{{item}}</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-3">
+            <div class="card">
+                <div class="card-header"><b>Models</b></div>
+                <div class="models card-body">
+                    <p *ngFor="let item of modelsObj?.model" (click)="getTrim(item)">{{item}}</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-3">
+            <div class="card">
+                <div class="card-header"><b>Trim</b></div>
+                <div class="trim card-body">
+                    <p *ngFor="let item of trimObj?.trim">{{item}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
